@@ -1,0 +1,9 @@
+{% if gyms_list %}
+    <ul>
+    {% for gym in gyms_list %}
+        <li><a href="{% url 'gyms:detail' gym.id %}">{{ gym.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Gym are available.</p>
+{% endif %}
