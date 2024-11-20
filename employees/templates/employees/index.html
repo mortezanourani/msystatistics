@@ -1,0 +1,10 @@
+<h1>کارکنان</h1>
+{% if employees_list %}
+    <ul>
+    {% for employee in employees_list %}
+        <li><a href="{% url 'employees:detail' employee.id %}">{{ employee }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>هیچ کارمندی ثبت نشده است.</p>
+{% endif %}

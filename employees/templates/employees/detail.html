@@ -1,0 +1,18 @@
+<h1>{{ employee.seen_code }}</h1>
+<ul>
+  <li>{{ employee.first_name }} {{ employee.last_name }}</li>
+  <li>{{ employee.phone }}</li>
+  <li>{{ employee.contract_type }}</li>
+  <li>{{ employee.contract_start }}</li>
+  <li>{{ employee.contract_end }}</li>
+</ul>
+
+<form action="{% url 'employees:update' employee.id %}" method="post">
+{% csrf_token %}
+  <fieldset>
+      <legend><h1>{{ employee.first_name }} {{ employee.last_name }}</h1></legend>
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      <input type="text" name="seen_code" value="{{ employee.seen_code }}">
+  </fieldset>
+  <input type="submit" value="Update">
+</form>

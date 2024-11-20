@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Add our new applications
     'msystatistics',
     'gyms.apps.GymsConfig',
+    'employees.apps.EmployeesConfig',
 ]
 
 MIDDLEWARE = [
